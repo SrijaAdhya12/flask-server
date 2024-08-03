@@ -1,16 +1,15 @@
 [tool.poetry]
-name = "server"
+name = "flask-server"
 version = "0.1.0"
-description = ""
+description = "A flask server"
 authors = ["Srija Adhya <srijaadhya.11sc.2020@gmail.com>"]
-readme = "README.md"
+readme = "../README.md"
+packages = [{ include = "app" }]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
 flask = "^3.0.3"
-flask-httpauth = "^4.8.0"
-pyjwt = "^2.9.0"
-flask-sqlalchemy = "^3.1.1"
 
 
 [build-system]
