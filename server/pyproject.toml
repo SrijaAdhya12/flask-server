@@ -15,6 +15,8 @@ pyjwt = "^2.9.0"
 flask-sqlalchemy = "^3.1.1"
 sqlalchemy-orm = "^1.2.10"
 marshmallow-sqlalchemy = "^1.0.0"
+psycopg2-binary = "^2.9.6"
+
 
 [tool.poetry.scripts]
 start = 'app.__main__:main'
