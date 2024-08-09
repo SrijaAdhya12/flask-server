@@ -1,5 +1,6 @@
 from app import db
 
+
 class Country(db.Model):
     __tablename__ = "Country"
     id = db.Column(db.Integer, primary_key=True)

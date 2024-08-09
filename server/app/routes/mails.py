@@ -8,7 +8,7 @@ from app.models.message import Message
 mails_bp = Blueprint("mails" , __name__)
 message_schema = MessageSchema()
 
-@mails_bp.route("/nails/summary" , methods=['GET'])
+@mails_bp.route("/mails/summary" , methods=['GET'])
 @token_auth.login_required
 def summary_mail():
     navigation_items = [
