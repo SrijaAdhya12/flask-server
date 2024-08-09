@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 from marshmallow_sqlalchemy import auto_field, SQLAlchemyAutoSchema, SQLAlchemySchema
 
 class User(db.Model):
-    __tablename__ = "Users"
+    __tablename__ = "User"
 
     id = db.Column(db.Integer , primary_key = True)
     username = db.Column(db.String(80), unique=True, nullable=False)
