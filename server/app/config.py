@@ -2,7 +2,7 @@ class Config:
     SQLALCHEMY_DATABASE_URI = "postgresql://sergio:my-password@localhost:5432/serverdb"
     LOGGING = {
         "version": 1,
-        "filters": { 
+        "filters": {
             "backend_filter": {
                 "backend_module": "backend",
             }

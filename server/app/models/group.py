@@ -2,7 +2,7 @@ from sqlalchemy.orm import relationship
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from app import db
 from app.models.user import User
-from app.models import group_table_name, user_table_name
+from app.models import group_table_name
 
 
 users_to_groups_assocation = db.Table(
@@ -26,6 +26,7 @@ class Group(db.Model):
     users = relationship(
         User.__name__, secondary=users_to_groups_assocation, backref="groups"
     )
+
 
 class GroupSchema(SQLAlchemyAutoSchema):
     class Meta:

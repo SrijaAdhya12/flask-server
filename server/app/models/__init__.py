@@ -1,5 +1,5 @@
 country_table_name = "country"
-group_table_name = "backend_user_group"
+group_table_name = "group"
 message_table_name = "message"
-profile_table_name = "profile"
-user_table_name = "backend_user"
+profile = "profile"
+user_table_name = "User"
