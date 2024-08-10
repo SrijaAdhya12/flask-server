@@ -2,6 +2,7 @@ from marshmallow import Schema, fields, post_load, validates, ValidationError
 import re
 from app.models.user import User
 
+
 class UserCreationSchema(Schema):
     username = fields.String(required=True)
     password = fields.String(required=True)

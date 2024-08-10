@@ -11,10 +11,10 @@ users_bp = Blueprint("users", __name__, url_prefix="/users")
 user_schema = UserSchema()
 user_creation_schema = UserCreationSchema()
 
+
 @users_bp.route("", methods=["GET"])
 @basic_auth.login_required
 def get_all_users():
-    # all_users = User.query.all()
     users = db.session.scalars(select(User)).all()
     return jsonify([{"id": u.id, "username": u.username} for u in users])
 
@@ -24,14 +24,13 @@ def get_all_users():
 def create_user():
     d = request.json
     new_user = user_creation_schema.load(d)
-    # u = User()
-    # u.username = d["username"]
-    # u.email = d["email"]
-    # u.password = generate_password_hash(d["password"])
-    # db.session.add(u)
-
     db.session.execute(
-        insert(User).values(username=new_user.username, email=new_user.email, password=generate_password_hash(new_user.password)))
+        insert(User).values(
+            username=new_user.username,
+            email=new_user.email,
+            password=generate_password_hash(new_user.password),
+        )
+    )
     db.session.commit()
 
     return Response(status=204)
@@ -40,7 +39,5 @@ def create_user():
 @users_bp.route("/<user_id>")
 @token_auth.login_required
 def get_user(user_id):
-    # u = User.query.filter(User.id == user_id).one()
-
     user = db.session.scalars(select(User).where(User.id == user_id)).one()
     return jsonify({"id": user.id, "username": user.username})

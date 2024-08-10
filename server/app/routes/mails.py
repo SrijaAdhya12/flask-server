@@ -5,10 +5,11 @@ from app.routes import token_auth
 from app import db
 from app.models.message import Message
 
-mails_bp = Blueprint("mails" , __name__)
+mails_bp = Blueprint("mails", __name__)
 message_schema = MessageSchema()
 
-@mails_bp.route("/mails/summary" , methods=['GET'])
+
+@mails_bp.route("/mails/summary", methods=["GET"])
 @token_auth.login_required
 def summary_mail():
     navigation_items = [
@@ -17,15 +18,16 @@ def summary_mail():
         {"url": "localhost:5000/users", "label": "Users"},
     ]
     current_user = token_auth.current_user()
-    messages = (db.session.scalars(select(Message).where(Message.user_id == current_user.id)
-                       .order_by(Message.created))
-                       .all()
-    )
+    messages = db.session.scalars(
+        select(Message)
+        .where(Message.user_id == current_user.id)
+        .order_by(Message.created)
+    ).all()
     return render_template(
         "summary_mail.html.jinga",
-        title= "Summary",
-        description= "Summary of the last week",
+        title="Summary",
+        description="Summary of the last week",
         user=current_user,
         navigation_items=navigation_items,
-        messages=message_schema.dump(messages, many=True)
+        messages=message_schema.dump(messages, many=True),
     )

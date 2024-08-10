@@ -1,5 +1,6 @@
-from marshmallow import Schema,fields,post_load
+from marshmallow import Schema, fields, post_load
 from app.models.user import User
+
 
 class CredentialsSchema(Schema):
     username = fields.String(required=True)
