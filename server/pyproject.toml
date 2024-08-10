@@ -20,7 +20,7 @@ alembic = "^1.13.2"
 
 [tool.poetry.scripts]
 start = 'app.__main__:main'
-run = 'flask run'
+run = 'app.__main__:main && flask run'
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.2"
