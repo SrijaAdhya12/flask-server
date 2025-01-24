@@ -1,4 +1,4 @@
-    updated on: 14th January 2025, Tuesday
+    updated on: 24th January 2025, Friday
 
 <div align=center>
     <a href="https://github.com/SrijaAdhya12/flask-server">
@@ -84,4 +84,4 @@
 [line]: https://user-images.githubusercontent.com/75939390/137615281-3a875960-92cc-407f-97fe-fd2319bdb252.png
 [License]: https://github.com/SrijaAdhya12/flask-server/blob/main/LICENSE
 
-<!-- 14/01/25 -->
+<!-- 24/01/25 -->
