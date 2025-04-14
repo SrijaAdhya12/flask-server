@@ -21,7 +21,7 @@ jobs:
                       The subject "{subject}" found in the pull request title "{title}" should start with a lowercase character.
             
             - name: Comment on PR
-              uses: marocchino/sticky-pull-request-comment@v2.9.1
+              uses: marocchino/sticky-pull-request-comment@v2.9.2
               if: ${{ always() && steps.lint_pr_title.outputs.error_message != null && !contains(fromJson('[ "dependabot[bot]", "dependabot-preview[bot]", "imgbot[bot]", "allcontributors" ]'), github.actor)}}
               with:
                   header: pr-title-lint-error
@@ -35,7 +35,7 @@ jobs:
                       ```
             
             - name: Delete comment
-              uses: marocchino/sticky-pull-request-comment@v2.9.1
+              uses: marocchino/sticky-pull-request-comment@v2.9.2
               if: ${{ steps.lint_pr_title.outputs.error_message == null }}
               with:
                   header: pr-title-lint-error
