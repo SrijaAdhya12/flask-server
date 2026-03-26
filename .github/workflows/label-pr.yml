@@ -15,7 +15,7 @@ jobs:
             pull-requests: write
         steps:
             - name: Run PR Labeler
-              uses: hoho4190/issue-pr-labeler@v2.0.1
+              uses: hoho4190/issue-pr-labeler@v3.1.0
               with:
                   token: ${{ github.token }}
                   disable-bot: false
